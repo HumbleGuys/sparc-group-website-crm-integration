@@ -9,6 +9,8 @@ class DepartmentData
     public function __construct(
         public int $id,
         public string $title,
+        /** @var Collection<int, CoworkerData> */
+        public Collection $coworkers,
     ) {}
 
     public static function fromArray(array $data): self
@@ -16,6 +18,7 @@ class DepartmentData
         return new self(
             id: $data['id'],
             title: $data['title'],
+            coworkers: CoworkerData::collect($data['coworkers']),
         );
     }
 
