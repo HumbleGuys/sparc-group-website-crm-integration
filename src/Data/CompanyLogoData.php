@@ -4,7 +4,8 @@ namespace SparcGroup\WebsiteCrmIntegration\Data;
 
 use Illuminate\Support\Collection;
 
-class CompanyLogoData {
+class CompanyLogoData
+{
     public function __construct(
         public int $id,
         public string $name,
