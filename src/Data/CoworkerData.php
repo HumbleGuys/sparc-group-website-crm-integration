@@ -10,9 +10,9 @@ class CoworkerData
         public int $id,
         public string $name,
         public string $image,
-        public string $title,
-        public string $phone,
-        public string $email,
+        public ?string $title,
+        public ?string $phone,
+        public ?string $email,
     ) {}
 
     public static function fromArray(array $data): self
@@ -21,9 +21,9 @@ class CoworkerData
             id: $data['id'],
             name: $data['name'],
             image: $data['image'],
-            title: $data['title'],
-            phone: $data['phone'],
-            email: $data['email'],
+            title: $data['title'] ?? null,
+            phone: $data['phone'] ?? null,
+            email: $data['email'] ?? null,
         );
     }
 
